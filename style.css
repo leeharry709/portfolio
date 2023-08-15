@@ -17,9 +17,14 @@ h1, h2, h3, h4 {
   display: none;
 }
 .center-image {
+    max-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.center-image img {
+    max-width: 100%;
     height: auto;
 }
 
