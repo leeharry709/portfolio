@@ -46,8 +46,8 @@
 
   <div class="text-container">
     <h2><p style="font-family: calibri;"><a href="https://github.com/leeharry709/BERT-for-Sentence-Classification">BERT for Sentence Classification - Binary Sentiment Analysis (NLP)</a></p></h2>
-    <button id="my-btn1">Expand</button>
-    <div id="container1">
+    <button id="my-btn1">Collapse</button>
+    <div id="container1" display: "block">
       <h2 id="potential-uses">Potential Uses</h2>
       <p>Binary classification of text is extremely powerful and relevant in today&#39;s business. One idea I had for binary sentiment classification is to analyze manager reviews of employees in a large company and identifying potential racial or gender bias. Being proactive in identifying potential bias can improve workplace satisfaction, inclusion, retention, and even avoid lawsuits.</p>
       <h2 id="bert-model">BERT model</h2>
@@ -125,7 +125,7 @@
 
   <h2><p style="font-family: calibri;"><a href="https://github.com/leeharry709/Image-Processing-and-Classification">Image Processing and Classification - Ripe Mange Detector</a></p></h2>
 
-  <button id="my-btn2">Expand</button>
+  <button id="my-btn2">Collapse</button>
 
   <div id="container2">
     <p style="font-family: calibri;">Processing and classifying images of mangos to determine if it is ripe or not ripe based on red-color distribution</p>
@@ -167,21 +167,22 @@
   btn1.addEventListener("click", function () {
     if (container1.style.display === "none") {
       container1.style.display = "block";
-      this.innerHTML = 'Collapse';
+      btn1.innerHTML = 'Collapse';
     } else {
       container1.style.display = "none";
-      this.innerHTML = 'Expand';
+      btn1.innerHTML = 'Expand';
     }
   })
 
   btn2.addEventListener("click", function () {
     if (container2.style.display === "none") {
       container2.style.display = "block";
-      this.innerHTML = 'Collapse';
+      btn2.innerHTML = 'Collapse';
     } else {
       container2.style.display = "none";
-      this.innerHTML = 'Expand';
+      btn2.innerHTML = 'Expand';
     }
   });
+
 </script>
 </html>
