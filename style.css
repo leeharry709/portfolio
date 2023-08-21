@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 body {
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
@@ -16,6 +17,13 @@ h1, h2, h3, h4 {
 #container2 {
   display: none;
 }
+#container3 {
+  display: none;
+}
+#container4 {
+  display: none;
+}
+
 .center-image {
     max-width: 100%;
     display: flex;

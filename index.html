@@ -3,146 +3,212 @@
 
 <head>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
   <title>Portfolio - HL</title>
 </head>
 
 <body>
-  <h4>
-    <p align="center">
-      <a href = "https://leeharry709.github.io/about-me/">ABOUT ME</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a href = "https://leeharry709.github.io/experience/">EXPERIENCE</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a href = "https://leeharry709.github.io/portfolio/">PORTFOLIO</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a href = "https://docs.google.com/viewer?url=https://raw.githubusercontent.com/leeharry709/resume/main/Harold_Lee_Resume_2023.pdf">RESUME</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a href = "https://leeharry709.github.io/contact/">CONTACT</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  </h4>
+<h4 align="center">
+    <a href = "https://leeharry709.github.io/about-me/">ABOUT ME</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href = "https://leeharry709.github.io/experience/">EXPERIENCE</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href = "https://leeharry709.github.io/portfolio/">PORTFOLIO</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href = "https://docs.google.com/viewer?url=https://raw.githubusercontent.com/leeharry709/resume/main/Harold_Lee_Resume_2023.pdf">RESUME</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href = "https://leeharry709.github.io/contact/">CONTACT</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</h4>
 
-  <div class="center-image">
-    <img src="https://raw.githubusercontent.com/leeharry709/portfolio/main/banner3.jpg">
+<div class="center-image">
+  <img src="https://raw.githubusercontent.com/leeharry709/portfolio/main/banner3.jpg">
+</div>
+
+<div class="text-container">
+  <h2><a href="https://github.com/leeharry709/BERT-for-Sentence-Classification">BERT for Sentence Classification - Binary Sentiment Analysis (NLP)</a></h2>
+
+  <button id="my-btn1">Expand</button>
+
+  <div id="container1" style="display: none;">
+    <h1 id="binary-sentiment-classification-analysis---bert-for-sentence-classification">Binary Sentiment Classification Analysis - BERT for Sentence Classification</h1>
+    <p>Fine-tuning BERT model to identify positive/negative sentiment in Amazon reviews.</p>
+    <h1 id="introduction">Introduction</h1>
+    <p>This is a project that aims to fine-tune the BERT pre-trained model on reviews to identify positive or negative sentiment. BERT models are initially trained on a massive amount of text data to learn general language representations. I wanted to fine-tune it specifically for reviews to see how accurate it can get.</p>
+    <h2 id="bert-model">BERT model</h2>
+    <p>BERT, or Bidirectional Encoder Representations from Transformers, is a deep learning model for natural language processing (NLP). It was developed by Google AI in 2018 and has since become one of the most popular NLP models, achieving state-of-the-art results on a variety of tasks, including question answering, natural language inference, and sentiment analysis. BERT is based on the transformer architecture, which is a neural network architecture that is particularly well-suited for NLP tasks. Transformer models are able to learn long-range dependencies between words in a sentence, which is essential for understanding the meaning of text. BERT is pre-trained on a massive dataset of text and code, which allows it to learn general language representations. This pre-training makes BERT very efficient at learning new tasks, as it does not need to be trained from scratch on each new dataset.</p>
+    <p align="center">
+      <img src="https://stanford-cs324.github.io/winter2022/lectures/images/bert.png" width="50%">
+    </p>
+
+    <h2 id="project-scope">Project Scope</h2>
+    <p>I wanted to fine-tune the BERT model on my GPU to identify bias on something simple such as Amazon reviews. I utlized a datasource posted by Kaggle user Kritanjalijain and constructed by Xiang Zhangwhich ahd over 1,800,000 training reviews and 400,000 testing reviews. By using this dataset, I would be able to create a trained model that would identify positive and negative bias.</p>
+    <h2 id="application">Application</h2>
+    <p>The original dataset proved to be too big for my computer to handle, so I trimmed it down to randomly selected sample of 5% of the training data and 10% of the testing data and ran 3 epochs with batch sizes of 20. With this, I was able to get an accuracy of 0.94 and validation loss of 0.27. After testing the data, I tested for accuracy, prevision, and recall. I got an accuracy score of 0.891, precision score of 0.9027, and recall score of 0.8784.</p>
+    <p><b>Training Summary</b></p>
+    <table>
+    <thead>
+    <tr>
+    <th>epoch</th>
+    <th>Training Loss</th>
+    <th>Evaluation Loss</th>
+    <th>Evaluation Accuracy</th>
+    <th>Training Time</th>
+    <th>Validation Time</th>
+    </tr>
+    </thead>
+    <tbody><tr>
+    <td>1</td>
+    <td>0.21</td>
+    <td>0.18</td>
+    <td>0.94</td>
+    <td>0:12:55</td>
+    <td>0:00:27</td>
+    </tr>
+    <tr>
+    <td>2</td>
+    <td>0.10</td>
+    <td>0.20</td>
+    <td>0.94</td>
+    <td>0:13:30</td>
+    <td>0:00:30</td>
+    </tr>
+    <tr>
+    <td>3</td>
+    <td>0.04</td>
+    <td>0.27</td>
+    <td>0.94</td>
+    <td>0:12:58</td>
+    <td>0:00:28</td>
+    </tr>
+    </tbody></table>
+    <p><b>Testing Model</b></p>
+    <table>
+    <thead>
+    <tr>
+    <th>Metric</th>
+    <th>Score</th>
+    </tr>
+    </thead>
+    <tbody><tr>
+    <td>Accuracy</td>
+    <td>0.891</td>
+    </tr>
+    <tr>
+    <td>Precision</td>
+    <td>0.9027</td>
+    </tr>
+    <tr>
+    <td>Recall</td>
+    <td>0.8784</td>
+    </tr>
+    </tbody></table>
+    <h2 id="conclusion">Conclusion</h2>
+    <p>The model performed well, but it is noteable that the recall score is slightly lower than the precision score, suggesting that the model may be lacking positive examples compared to negative ones. This imbalance of the data could be due to the randomly selected samples. Using the full training and testing datasets could correct this issue. Overall, I think this test went well.</p>
+    <h2 id="potential-uses">Potential Uses</h2>
+    <p>Binary classification of text is extremely powerful and relevant in today&#39;s business. One idea I had for binary sentiment classification is to analyze manager reviews of employees in a large company and identifying potential racial or gender bias. Being proactive in identifying potential bias can improve workplace satisfaction, inclusion, retention, and even avoid lawsuits</p>
+    <br>
   </div>
 
-  <div class="text-container">
-    <h2><p"><a href="https://github.com/leeharry709/BERT-for-Sentence-Classification">BERT for Sentence Classification - Binary Sentiment Analysis (NLP)</a></p></h2>
-    <button id="my-btn1">Expand</button>
-    <div id="container1" display: "block">
-      <h2 id="potential-uses"><p">Potential Uses</p></h2>
-      <p>Binary classification of text is extremely powerful and relevant in today&#39;s business. One idea I had for binary sentiment classification is to analyze manager reviews of employees in a large company and identifying potential racial or gender bias. Being proactive in identifying potential bias can improve workplace satisfaction, inclusion, retention, and even avoid lawsuits.</p>
-      <h2 id="bert-model"><p">BERT model</p></h2>
-      <p">BERT, or Bidirectional Encoder Representations from Transformers, is a deep learning model for natural language processing (NLP). It was developed by Google AI in 2018 and has since become one of the most popular NLP models, achieving state-of-the-art results on a variety of tasks, including question answering, natural language inference, and sentiment analysis. BERT is based on the transformer architecture, which is a neural network architecture that is particularly well-suited for NLP tasks. Transformer models are able to learn long-range dependencies between words in a sentence, which is essential for understanding the meaning of text. BERT is pre-trained on a massive dataset of text and code, which allows it to learn general language representations. This pre-training makes BERT very efficient at learning new tasks, as it does not need to be trained from scratch on each new dataset.</p>
-      <p align="center">
-        <img src="https://stanford-cs324.github.io/winter2022/lectures/images/bert.png" width="50%">
-      </p>
-
-      <h2 id="project-scope"><p">Project Scope</p></h2>
-      <p">I wanted to train the BERT model on my GPU to identify bias on something simple such as Amazon reviews. I utlized a datasource posted by Kaggle user Kritanjalijain and constructed by Xiang Zhangwhich ahd over 1,800,000 training reviews and 400,000 testing reviews. By using this dataset, I would be able to create a trained model that would identify positive and negative bias.</p>
-      <h2 id="application"><p">Application</p></h2>
-      <p">The original dataset proved to be too big for my computer to handle, so I trimmed it down to randomly selected sample of 5% of the training data and 10% of the testing data and ran 3 epochs with batch sizes of 20. With this, I was able to get an accuracy of 0.94 and validation loss of 0.27. After testing the data, I tested for accuracy, prevision, and recall. I got an accuracy score of 0.891, precision score of 0.9027, and recall score of 0.8784.</p>
-      <p"><b>Training Summary</b></p>
-      <table>
-      <thead>
-      <tr>
-      <th>epoch</th>
-      <th>Training Loss</th>
-      <th>Evaluation Loss</th>
-      <th>Evaluation Accuracy</th>
-      <th>Training Time</th>
-      <th>Validation Time</th>
-      </tr>
-      </thead>
-      <tbody><tr>
-      <td>1</td>
-      <td>0.21</td>
-      <td>0.18</td>
-      <td>0.94</td>
-      <td>0:12:55</td>
-      <td>0:00:27</td>
-      </tr>
-      <tr>
-      <td>2</td>
-      <td>0.10</td>
-      <td>0.20</td>
-      <td>0.94</td>
-      <td>0:13:30</td>
-      <td>0:00:30</td>
-      </tr>
-      <tr>
-      <td>3</td>
-      <td>0.04</td>
-      <td>0.27</td>
-      <td>0.94</td>
-      <td>0:12:58</td>
-      <td>0:00:28</td>
-      </tr>
-      </tbody></table>
-      <p"><b>Testing Model</b></p>
-      <table>
-      <thead>
-      <tr>
-      <th>Metric</th>
-      <th>Score</th>
-      </tr>
-      </thead>
-      <tbody><tr>
-      <td>Accuracy</td>
-      <td>0.891</td>
-      </tr>
-      <tr>
-      <td>Precision</td>
-      <td>0.9027</td>
-      </tr>
-      <tr>
-      <td>Recall</td>
-      <td>0.8784</td>
-      </tr>
-      </tbody></table>
-      <h2 id="conclusion"><p">Conclusion</p></h2>
-      <p">The model performed well, but it is noteable that the recall score is slightly lower than the precision score, suggesting that the model may be lacking positive examples compared to negative ones. This imbalance of the data could be due to the randomly selected samples. Using the full training and testing datasets could correct this issue. Overall, I think this test went well.</p>
-      <br>
-    </div>
-  <br>
-  <br></brB><h2><p"><a href="https://github.com/leeharry709/Image-Processing-and-Classification">Image Processing and Classification - Ripe Mange Detector</a></p></h2>
+  <br><br><h2><a href="https://github.com/leeharry709/Image-Processing-and-Classification">Image Processing and Classification - Ripe Mange Detector</a></h2>
 
   <button id="my-btn2">Expand</button>
 
-  <div id="container2">
-    <p">Processing and classifying images of mangos to determine if it is ripe or not ripe based on red-color distribution</p>
+  <div id="container2" style="display: none;">
+    <p>Processing and classifying images of mangos to determine if it is ripe or not ripe based on red-color distribution</p>
     <p align="center">
       <img src="https://github.com/leeharry709/about-me-deprecated/blob/main/media/download.png?raw=true"><img src="https://github.com/leeharry709/about-me-deprecated/blob/main/media/download%20(1).png?raw=true"><img src="https://github.com/leeharry709/about-me-deprecated/blob/main/media/download%20(2).png?raw=true"><img src="https://github.com/leeharry709/about-me-deprecated/blob/main/media/download%20(3).png?raw=true"><img src="https://github.com/leeharry709/about-me-deprecated/blob/main/media/download%20(4).png?raw=true">
     </p>
 
-    <h2 id="introduction"><p">Introduction</p></h2>
-    <p">This project was to create a program that could intake a user submitted image of a mangoe and classify whether it is ripe or not. I once got confused whether mangos were ripe or not at the supermarket, so I thought it would be a fun project and challenge to create this. This would require a large dataset of mangos with varying ripeness as well as some machine learning. This project was done in two steps - using a premade dataset of mangos to train a model that will help detect mango ripeness and generating mangos and artificially generated ripeness. I&#39;ll explain that in Part 2 below.</p>
-    <h2 id="part-1"><p">Part 1</p></h2>
-    <h3 id="using-a-pre-made-dataset"><p">Using a pre-made dataset</p></h3>
-    <p">I trained a model with tensorflow using a premade set of images from Kaggle that had 427 ripe mangos and 1003 unripe mangos. By training the model to differentiate between what is a &quot;green mango&quot; versus what is a &quot;ripe mango&quot;, the user can input a filepath to their mango image and it will predict whether or not it is or is not a ripe mango based on its red-yellow-green color distribution. Based on how much green is missing and red is showing, the program will tell if a mango is ripe or not. </p>
-    <p">The major limiting factor is how much yellow is showing. For mangos, yellow can swing between both ripe and unripe depending on how much green or red is showing. If too much yellow is showing, the program will classify it as unripe. Another big challenge was that the database of ripe and green mangos was not very useful. The colors were inconsistent due to lighting and utilizing real-life images with stock images which greately affected saturation and color distribution. It also had a few different varieties of mangos, and this color detection method is primary useful for identifying ripeness in kent mangos. In part 2, I attempt to control this issue.</p>
-    <h2 id="part-2"><p">Part 2</p></h2>
-    <h3 id="artificially-generating-a-dataset"><p">Artificially generating a dataset</p></h3>
-    <p">I wanted to create a dataset that could alleviate my dataset issues from part 1, so I thought to generate images of mangos of different color distributions. For this part, I went with the theory that mangos that are at least 50% red are considered ripe regardless of yellow and green color distribution. Using this as my definition, I created a program that could take 1 image of a mango and make X number of images with incrementally smaller amounts of red-color distribution. Since the only color I really needed was red, I calculated the Euclidian distance from the color red (RGB: 255, 0, 0) and incrementally blacked-out the colors farthest from red.</p>
-    <p align="center"">
-    <img src="https://raw.githubusercontent.com/leeharry709/about-me-deprecated/main/media/download%20(5).png">
-    <br>Distribution of Euclidian distance (excluding pure-white pixels) in input image
+    <h2 id="introduction"><p>Introduction</p></h2>
+    <p>This project was to create a program that could intake a user submitted image of a mangoe and classify whether it is ripe or not. I once got confused whether mangos were ripe or not at the supermarket, so I thought it would be a fun project and challenge to create this. This would require a large dataset of mangos with varying ripeness as well as some machine learning. This project was done in two steps - using a premade dataset of mangos to train a model that will help detect mango ripeness and generating mangos and artificially generated ripeness. I&#39;ll explain that in Part 2 below.</p>
+    <h2 id="part-1"><p>Part 1</p></h2>
+    <h3 id="using-a-pre-made-dataset"><p>Using a pre-made dataset</p></h3>
+    <p>I trained a model with tensorflow using a premade set of images from Kaggle that had 427 ripe mangos and 1003 unripe mangos. By training the model to differentiate between what is a &quot;green mango&quot; versus what is a &quot;ripe mango&quot;, the user can input a filepath to their mango image and it will predict whether or not it is or is not a ripe mango based on its red-yellow-green color distribution. Based on how much green is missing and red is showing, the program will tell if a mango is ripe or not. </p>
+    <p>The major limiting factor is how much yellow is showing. For mangos, yellow can swing between both ripe and unripe depending on how much green or red is showing. If too much yellow is showing, the program will classify it as unripe. Another big challenge was that the database of ripe and green mangos was not very useful. The colors were inconsistent due to lighting and utilizing real-life images with stock images which greately affected saturation and color distribution. It also had a few different varieties of mangos, and this color detection method is primary useful for identifying ripeness in kent mangos. In part 2, I attempt to control this issue.</p>
+    <h2 id="part-2"><p>Part 2</p></h2>
+    <h3 id="artificially-generating-a-dataset"><p>Artificially generating a dataset</p></h3>
+    <p>I wanted to create a dataset that could alleviate my dataset issues from part 1, so I thought to generate images of mangos of different color distributions. For this part, I went with the theory that mangos that are at least 50% red are considered ripe regardless of yellow and green color distribution. Using this as my definition, I created a program that could take 1 image of a mango and make X number of images with incrementally smaller amounts of red-color distribution. Since the only color I really needed was red, I calculated the Euclidian distance from the color red (RGB: 255, 0, 0) and incrementally blacked-out the colors farthest from red.</p>
+    <p align="center">
+      <img src="https://raw.githubusercontent.com/leeharry709/about-me-deprecated/main/media/download%20(5).png">
+      <br>Distribution of Euclidian distance (excluding pure-white pixels) in input image
     </p>
 
-    <p">By doing it this way, I could create my own dataset of mangoes from a small number of mangoes with an even number of ripe vs unripe mangos, alleviating the dataset issue from step one. One thing to note is that this could introduce heavy bias into the image set since it is based on what the person generating the dataset considers to be ripe or not. Theorhetically, one could say that ripe mangoes are just mangoes with no green, regardless of red-yellow color distribution. This is by no means a perfect way to handle the dataset issue in part 1, but it offers a start to a solution.</p>
-    <h2 id="conclusion"><p">Conclusion</p></h2>
-    <p">Training the model on a premade dataset was a great entrypoint into understanding machine learning. Processing and generating images of mangos of different color distribution offers a solution, but is by no means the best answer. Somewhere in the middle lies a good way to creating a final product that could classify images of user sent mangos as ripe or not ripe regardless of lighting or variety. Potentially, even asking the user to input 2 sides of the mango would allow the program to give the best answer since one side could be more red then the other, and the program would average the color distribution from the 2 images to give the final answer.</p>
-    <h2 id="image-classification-real-world-use-case"><p">Image Classification - Real World Use Case</p></h2>
-    <p">Binary image classification can find use in a lot of fields. One use case I&#39;ve seen extensively is the detection of AI-generate images vs human-created images. Sites like isitai.com work by using machine learning models to examine various features of the image, such as color patterns, shapes, and textures, and then compares them to patterns typically found in human-generated images or AI-generated images. Image classification can also be used in the medical field to diagnose patioents such as with xrays, MRIs, and CT scans.</p>
+    <p>By doing it this way, I could create my own dataset of mangoes from a small number of mangoes with an even number of ripe vs unripe mangos, alleviating the dataset issue from step one. One thing to note is that this could introduce heavy bias into the image set since it is based on what the person generating the dataset considers to be ripe or not. Theoretically, one could say that ripe mangoes are just mangoes with no green, regardless of red-yellow color distribution. This is by no means a perfect way to handle the dataset issue in part 1, but it offers a start to a solution.</p>
+    <h2 id="conclusion"><p>Conclusion</p></h2>
+    <p>Training the model on a premade dataset was a great entrypoint into understanding machine learning. Processing and generating images of mangos of different color distribution offers a solution, but is by no means the best answer. Somewhere in the middle lies a good way to creating a final product that could classify images of user sent mangos as ripe or not ripe regardless of lighting or variety. Potentially, even asking the user to input 2 sides of the mango would allow the program to give the best answer since one side could be more red than the other, and the program would average the color distribution from the 2 images to give the final answer.</p>
+    <h2 id="image-classification-real-world-use-case"><p>Image Classification - Real World Use Case</p></h2>
+    <p>Binary image classification can find use in a lot of fields. One use case I have seen extensively is the detection of AI-generate images vs human-created images. Sites like isitai.com work by using machine learning models to examine various features of the image, such as color patterns, shapes, and textures, and then compares them to patterns typically found in human-generated images or AI-generated images. Image classification can also be used in the medical field to diagnose patients such as with xrays, MRIs, and CT scans.</p>
     <p align="center">
       <img src="https://raw.githubusercontent.com/leeharry709/Image-Processing-and-Classification/main/ai_detection.PNG" width = 50%>
     </p>
+    <br>
   </div>
+
+  <br><br><h2><a href="https://github.com/leeharry709/NLP-Text-Summary-Sentiment-Analysis/">Text Summarization and Sentiment Analysis</a></h2>
+
+  <button id="my-btn3">Expand</button>
+
+  <div id="container3" style="display: none;">
+    <h2 id="introduction">Introduction</h2>
+    <p>This is a streamlit application that takes user input text and outputs a summary, sentiment (polarity and subjectivity), and top 10 keywords. This is a simple showcase of utilizing huggingface transformers to run natural language processing (NLP) in multiple ways.</p>
+    <h2 id="pegasus-model">Pegasus Model</h2>
+    <p align='center'>
+      <img src='https://production-media.paperswithcode.com/methods/f8b904da-2aaa-4b73-85cd-a8adfacce042.png' width='75%'>
+    </p>
+    Pegasus is a pre-trained transformer model developed by Google AI for text summarization, built on top of the BART (Bidirectional Autoregressive Transformers) architecture. Pegasus uses a masked language modeling (MLM) objective to pre-train, which involves randomly masking some of the words in a sentence and then predicting the missing words. What is unique with the output of Pegasus is that the model generates a completely new summary whereas other models use sentences within the input text to generate a summary.
+
+    <h2 id="analysis">Analysis</h2>
+    <p align='center'>
+      <img src='https://github.com/leeharry709/NLP-Text-Summary-Sentiment-Analysis/blob/main/Screenshot%202023-08-18%20215116.png?raw=true' width='65%'>
+    </p>
+
+    <p>The image shows the summary, keywords, and sentiment of the introductory paragraph of the Google AI blog post: <a href="https://ai.googleblog.com/2020/06/pegasus-state-of-art-model-for.html">PEGASUS: A State-of-the-Art Model for Abstractive Text Summarization</a>.</p>
+    <p>The keywords are generated by the yake library. It uses 5 factors to generate the score for each keyword: Word frequency, length, position, relatedness to context, and difference between sentences. Those 5 factors are the combined to give a single score for each keyword. The lower the score, the more relevant the keyword is considered to be.</p>
+    <p>The sentiment is calculated by TextBlob, a python library with a variety of tools for NLP tasks including sentiment analysis. The sentiment() function in TextBlob has two properties: Polarity and subjectivity. Polarity is a float between -1 and 1 that indicates positive (+1) vs negative (-1) sentiment. A polarity of 0 indicates neutral sentiment. Subjectivity is a float between 0 and 1 that indicates how subjective (0) or opinionative (1) the input text is.</p>
+    <h2 id="conclusion">Conclusion</h2>
+    <p>Based on the results of the analysis, the Google AI blog post of Pegasus model is shown to be slightly positively sentimented and neither fully subjective nor opnionative. While this is only a simple showcase of NLP, there is a lot of inferences we can pull from the results. This is a blog post by Google talking about their own product, so we can expect to see some positive and objective bias, but the introduction still remained faily neutral. With more text, there would be more accurate scores regarding the entire paper. But, these initial scores tell us that there is good information to be gleamed from the blog post without significant bias.</p>
+    <h2 id="real-world-application">Real-World Application</h2>
+    <p>Text summarization, sentiment, and keyword extraction are all very essential to everyday life already. All three methods of NLP are used in search engines to show users before they click on the link what they are expecting in the website. The keywords can help users find what they are looking for without typing out the exact phrases or title of the webpage, the summarization can tell them briefly what the page is about before fully clicking on them (and inadvertantly avoiding spam or malware sites), and the sentiment can filter out search results that are too polarizing and opinionated. Optimization of NLP will allow users to live more efficient and productive lives.</p>
+    <br>
+  </div>
+
+  <br><br><h2><a href="https://github.com/leeharry709/generative-nlp-chatbot">LangChain - Generative AI Chatbot</a></h2>
+
+  <button id="my-btn4">Expand</button>
+
+  <div id="container4" style="display: none;">
+    <h2 id="introduction">Introduction</h2>
+    <p>The purpose of this project is to experiment with building a local version of a generative AI chatbot. Generative AI chatbots, such as ChatGPT and Google Bard, are becoming increasingly popular in the tech space. Many companies are building their own large language models (LLMs) and AI assistants to meet their specific needs. Tapping into the power of generative AI has the potential to improve efficiency and learning in a variety of fields. This application takes user input, searches the web using Google for the most accurate response and writes it into a streamlit interface.</p>
+    <h2 id="process">Process</h2>
+    <p>For this project, I used an OpenAI API to utilize GPT-3 to generate the search input and result as well as Google API to search the web. Once the user inputs their question, LangChain utilizes OpenAI to generate a simplified search statement to input into Google based on the user input. By initializing a LangChain agent for searching Google, this process becomes extremely simple to code while getting very good results.</p>
+    <h2 id="results">Results</h2>
+    <p align="center">
+      <img src="https://github.com/leeharry709/generative-nlp-chatbot/blob/main/lanchain_agents_ss.png?raw=true" width='75%'>
+    </p>
+
+    The search gave some very interesting results. The first question was answered most accurately, explaining the use of the third eyelid. users would then be able to interpret taht cats have three eyelids to protect their eyes and keep them moist. The second question is incorrect according to Politico.com, which states that Trump has been indicted on 34 felony counts in connection with hush money payments, not falsifying business records in New York. It seems it many have pieced it all together based on various news articles. The third and fourth responses are most interested to me. Without the dat input, the chatbot gave me when the lowest price $SPY was at in October 2022. But, by giving it a specific date to search for, it gave me the right answer.
+
+    <h2 id="conclusions">Conclusions</h2>
+    <p>AI learning is still in its infancy. While the technology is there and generative AI is possible, it isn&#39;t completely soundproof yet. Inaccuracy can cause misinformation in these types of bots, and users would require more accuracy and reliablility to have it truly add value into their lives. With more fine-tuning into how OpenAI generates search results, more accurate responses could be generated. It all would come down to fully understand how OpenAI generates its search results, how Google utilizes the search input to generate its results, and how OpenAI summarizes the search results into a cohesive response. </p>
+    <br>
+  </div>
+
+
 </div>
-</body>
+
 <script>
-  const btn1 = document.querySelector("#my-btn1")
-  const container1 = document.querySelector("#container1")
-  const btn2 = document.querySelector("#my-btn2")
-  const container2 = document.querySelector("#container2")
+  const btn1 = document.querySelector("#my-btn1");
+  const container1 = document.querySelector("#container1");
+
+  const btn2 = document.querySelector("#my-btn2");
+  const container2 = document.querySelector("#container2");
+
+  const btn3 = document.querySelector("#my-btn3");
+  const container3 = document.querySelector("#container3");
+
+  const btn4 = document.querySelector("#my-btn4");
+  const container4 = document.querySelector("#container4");
 
   container1.style.display = "none";
   container2.style.display = "none";
+  container3.style.display = "none";
+  container4.style.display = "none";
 
   btn1.addEventListener("click", function () {
     if (container1.style.display === "none") {
@@ -152,7 +218,7 @@
       container1.style.display = "none";
       btn1.innerHTML = 'Expand';
     }
-  })
+  });
 
   btn2.addEventListener("click", function () {
     if (container2.style.display === "none") {
@@ -164,5 +230,25 @@
     }
   });
 
+  btn3.addEventListener("click", function () {
+    if (container3.style.display === "none") {
+      container3.style.display = "block";
+      btn3.innerHTML = 'Collapse';
+    } else {
+      container3.style.display = "none";
+      btn3.innerHTML = 'Expand';
+    }
+  });
+
+  btn4.addEventListener("click", function () {
+    if (container4.style.display === "none") {
+      container4.style.display = "block";
+      btn4.innerHTML = 'Collapse';
+    } else {
+      container4.style.display = "none";
+      btn4.innerHTML = 'Expand';
+    }
+  });
 </script>
+</body>
 </html>
